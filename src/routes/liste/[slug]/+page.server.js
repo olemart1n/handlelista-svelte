@@ -57,15 +57,13 @@ export async function load({ params, cookies }) {
 			cookies.delete('lists', { path: '/' });
 			cookies.set('lists', JSON.stringify(parsed), {
 				path: '/',
-				expires: new Date('9999-12-31T23:59:59'),
-				domain: '.handlelista.no'
+				expires: new Date('9999-12-31T23:59:59')
 			});
 		}
 	} else {
 		cookies.set('lists', JSON.stringify([{ id, title }]), {
 			path: '/',
-			expires: new Date('9999-12-31T23:59:59'),
-			domain: '.handlelista.no'
+			expires: new Date('9999-12-31T23:59:59')
 		});
 	}
 

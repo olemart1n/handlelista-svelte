@@ -26,14 +26,12 @@ export async function POST({ request, cookies }) {
 			parsed.push(value);
 			cookies.set('lists', JSON.stringify(parsed), {
 				path: '/',
-				expires: new Date('9999-12-31T23:59:59'),
-				domain: '.handlelista.no'
+				expires: new Date('9999-12-31T23:59:59')
 			});
 		} else {
 			cookies.set('lists', JSON.stringify([value]), {
 				path: '/',
-				expires: new Date('9999-12-31T23:59:59'),
-				domain: '.handlelista.no'
+				expires: new Date('9999-12-31T23:59:59')
 			});
 		}
 
