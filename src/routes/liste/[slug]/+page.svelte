@@ -38,7 +38,7 @@
 		<AddItemInput listId={data.listId} onAdd={addItem} />
 	</div>
 	<div
-		class="mx-auto gap-4 mt-3 flex min-h-[400px] flex-col justify-between dark:text-slate-50 lg:w-1/2"
+		class="mx-auto w-full gap-4 mt-3 flex min-h-[400px] flex-col justify-between dark:text-slate-50 lg:w-1/2"
 	>
 		<div>
 			{#each data.items as item}

@@ -28,7 +28,7 @@
 	};
 </script>
 
-<form class={'my-2 flex h-10 lg:w-1/2 lg:mx-auto'} on:submit={async () => send()}>
+<form class={'my-2 flex w-10/12 h-10 lg:w-1/2 mx-auto'} on:submit={async () => send()}>
 	<input
 		id="input-ref"
 		bind:value={title}
