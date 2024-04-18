@@ -24,9 +24,15 @@ export async function POST({ request, cookies }) {
 			cookies.delete('lists', { path: '/' });
 			const parsed = JSON.parse(alreadyStored);
 			parsed.push(value);
-			cookies.set('lists', JSON.stringify(parsed), { path: '/' });
+			cookies.set('lists', JSON.stringify(parsed), {
+				path: '/',
+				expires: new Date('9999-12-31T23:59:59')
+			});
 		} else {
-			cookies.set('lists', JSON.stringify([value]), { path: '/' });
+			cookies.set('lists', JSON.stringify([value]), {
+				path: '/',
+				expires: new Date('9999-12-31T23:59:59')
+			});
 		}
 
 		return json({ list }, { status: 201 });

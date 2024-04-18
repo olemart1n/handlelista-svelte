@@ -16,6 +16,7 @@
 <svelte:head>
 	<title>Handlelista/svelte</title>
 	<meta name="description" content="finn besøkte handlelista eller opprett en ny" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 </svelte:head>
 
 <InputCreateList onAdd={addToLists} />

@@ -28,6 +28,12 @@
 	}
 </script>
 
+<svelte:head>
+	<title>svelte.handlelista.no</title>
+	<meta name="description" content="finn besøkte handlelista eller opprett en ny" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+</svelte:head>
+
 <div class="mx-auto my-1 flex w-11/12 flex-col justify-between">
 	<h2 class="barlow my-auto w-full text-center dark:text-slate-50">
 		liste: {data.list.title}

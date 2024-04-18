@@ -30,12 +30,43 @@ async function getListItems(id) {
 	return res.rows;
 }
 
-export async function load({ params }) {
+export async function load({ params, cookies }) {
 	const id = params.slug;
-
 	const data = await Promise.all([getList(id), getListItems(id)]);
-
 	if (!data[0]) throw error(404);
+	/**
+	 * @type {string} title
+	 */
+	const title = typeof data[0].title === 'string' ? data[0].title : '';
+
+	const alreadyStored = cookies.get('lists');
+	if (alreadyStored) {
+		console.log('is already stored');
+		/**
+		 * @typedef {Object} obj
+		 * @property {string} id
+		 * @property {string} title
+		 */
+
+		/**
+		 * @type {obj []} parsed
+		 */
+		const parsed = JSON.parse(alreadyStored);
+		if (!parsed.find((obj) => obj.id === id)) {
+			const title = typeof data[0].title === 'string' ? data[0].title : '';
+			parsed.push({ id, title });
+			cookies.delete('lists', { path: '/' });
+			cookies.set('lists', JSON.stringify(parsed), {
+				path: '/',
+				expires: new Date('9999-12-31T23:59:59')
+			});
+		}
+	} else {
+		cookies.set('lists', JSON.stringify([{ id, title }]), {
+			path: '/',
+			expires: new Date('9999-12-31T23:59:59')
+		});
+	}
 
 	return { list: data[0], items: data[1], listId: params.slug };
 }
