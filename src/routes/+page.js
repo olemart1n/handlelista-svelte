@@ -3,6 +3,5 @@ export const config = {
 	runtime: 'edge'
 };
 
-// since there's no dynamic data here, we can prerender
-// it so that it gets served as a static asset in production
+// DATA IS DYNAMIC (DEPENDENT ON LISTS STORED IN COOKIE) SO IT CAN NOT BE PRERENDERED
 export const prerender = false;

@@ -24,6 +24,4 @@
 	{#each data.lists as list}
 		<LinkToList id={list.id} title={list.title} />
 	{/each}
-
-	{JSON.stringify(data.lists)}
 </div>
