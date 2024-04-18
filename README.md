@@ -1,6 +1,6 @@
 # Handlelista-svelte
 
-[Handlelista](https://svelte.hanslelista.no)
+[Handlelista](https://svelte.handlelista.no)
 
 `git clone https://github.com/olemart1n/handlelista-svelte.git`
 
